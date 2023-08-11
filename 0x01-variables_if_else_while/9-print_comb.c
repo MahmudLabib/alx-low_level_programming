@@ -12,8 +12,15 @@ int main(void)
 	for (i = 0; i <= 9; i++)
 	{
 		putchar(i + '0');
-		putchar(',');
-		putchar(32);
+		if (i != 9)
+		{
+			putchar(',');
+			putchar(32);
+		}
+		else
+		{
+			break;
+		}
 	}
 	putchar('\n');
 	return (0);
