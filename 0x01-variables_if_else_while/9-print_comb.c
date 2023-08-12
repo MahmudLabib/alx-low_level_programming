@@ -3,7 +3,9 @@
 /**
  * main - prints all possible combinations of single-digit numbers
  *
- * Return: 0 (Success)
+ * Descroption: false or true validation
+ *
+ * Return: always 0 (Success)
  */
 int main(void)
 {
