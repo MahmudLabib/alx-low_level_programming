@@ -8,19 +8,11 @@
 
 int main(void)
 {
-	_putchar();
-	return (0);
-}
+	char arr[] = "_putchar";
+	int i;
 
-void _putchar(void)
-{
-	putchar('_');
-	putchar('p');
-	putchar('u');
-	putchar('t');
-	putchar('c');
-	putchar('h');
-	putchar('a');
-	putchar('r');
-	putchar('\n');
+	for (i = 0; i < 8; i++)
+		_putchar(arr[i]);
+	_putchar('\n');
+	return (0);
 }
