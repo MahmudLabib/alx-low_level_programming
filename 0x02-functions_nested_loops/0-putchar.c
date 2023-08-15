@@ -11,11 +11,7 @@ int main(void)
 	_putchar();
 	return (0);
 }
-/**
- * _putchar - prints putchar char by char
- *
- * Return: void (success)
- */
+
 void _putchar(void)
 {
 	putchar('_');
