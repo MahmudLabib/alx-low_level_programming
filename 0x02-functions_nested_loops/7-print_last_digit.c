@@ -8,6 +8,11 @@
  */
 int print_last_digit(int num)
 {
+	if (num == INT_MIN)
+	{
+		_putchar('8');
+		return (8);
+	}
 	int absNum = (num < 0) ? -num : num;
 	int last_digit = absNum % 10;
 
