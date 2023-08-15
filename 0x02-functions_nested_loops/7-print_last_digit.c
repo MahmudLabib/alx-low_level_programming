@@ -13,10 +13,13 @@ int print_last_digit(int num)
 		_putchar('8');
 		return (8);
 	}
+	else
+	{
 	int absNum = (num < 0) ? -num : num;
 	int last_digit = absNum % 10;
 
 	_putchar('0' + last_digit);
 	return (last_digit);
+	}
 }
 
