@@ -22,4 +22,18 @@ void print_to_98(int n)
 			n = n + 1;
 		}
 	}
+	while (n >= 98)
+	{
+		if (n == 98)
+		{
+			printf("%d", n);
+			printf("\n");
+			n = n - 1;
+		}
+		else
+		{
+			printf("%d, ", n);
+			n = n - 1;
+		}
+	}
 }
