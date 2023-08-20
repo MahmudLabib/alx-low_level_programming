@@ -21,14 +21,8 @@ void primeFactorization(long int n)
 		}
 		else
 		{
-			if (divisor > 2)
-			{
-				divisor += 2;
-			}
-			else
-			{
-				divisor++;
-			}
+		    divisor++;
+		    continue;
 		}
 	}
 	printf("%ld\n", divisor);
