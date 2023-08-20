@@ -21,8 +21,8 @@ void primeFactorization(long int n)
 		}
 		else
 		{
-		    divisor++;
-		    continue;
+			divisor++;
+			continue;
 		}
 	}
 	printf("%ld\n", divisor);
