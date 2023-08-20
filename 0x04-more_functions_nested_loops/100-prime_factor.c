@@ -31,8 +31,7 @@ void primeFactorization(long int n)
 			}
 		}
 	}
-	printf("%ld ", divisor);
-	printf("\n");
+	printf("%ld\n", divisor);
 }
 /**
  * main - Entry point
