@@ -16,8 +16,8 @@ void puts2(char *str)
 		ptr++;
 		if (*ptr != '\0')
 		{
-			str = str + 2;
 			_putchar(*str);
+			str = str + 2;
 		}
 		else
 		{
