@@ -6,11 +6,11 @@
  *
  * Return: Length of string
  */
-
 int _strlen(char *s)
 {
-	int counter = 0;
+	int counter;
 
+	counter = 0;
 	while (*s != '\0')
 	{
 		counter++;
@@ -18,14 +18,11 @@ int _strlen(char *s)
 	}
 	return (counter);
 }
-
 /**
  * puts_half - Prints half of a string
  * @str: Pointer to the first character of the string
- * 
  * Return: void
  */
-
 void puts_half(char *str)
 {
 	int i, n;
