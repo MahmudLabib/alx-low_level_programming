@@ -3,10 +3,10 @@
 /**
  * cap_string -  capitalizes all words of a string
  * @s: Pointer to string
- * 
+ *
  * Return: Pointer to char
  */
- char *cap_string(char *s)
+char *cap_string(char *s)
 {
 	int i = 0;
 
