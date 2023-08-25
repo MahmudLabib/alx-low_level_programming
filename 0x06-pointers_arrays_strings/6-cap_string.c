@@ -2,24 +2,31 @@
 
 /**
  * cap_string -  capitalizes all words of a string
- * @s: Pointer to string
+ * @a: Pointer to string
  * 
  * Return: Pointer to char
  */
-char *cap_string(char *s)
+ char *cap_string(char *a)
 {
-	int i;
+	int i = 0;
 
-	for (i = 0; s[i] != '\0'; i++)
+	while (a[i] != '\0')
 	{
-		if (s[i] == '\0' || s[i] == '\n' || s[i] == '\t')
+		if (i == 0 && a[i] >= 'a' && a[i] <= 'z')
 		{
-			int j = i + 1;
-			if (s[j] >= 'a' && s[j] <= 'z')
-			{
-				s[j] -= 32;
-			}
+			a[i++] -= 32;
+			continue;
 		}
+		if (a[i - 1] == ' ' || a[i - 1] == '\n' ||
+            a[i - 1] == ',' || a[i - 1] == ';' || a[i - 1] == '.' ||
+            a[i - 1] == '!' || a[i - 1] == '?' || a[i - 1] == '"' ||
+            a[i - 1] == '(' || a[i - 1] == ')' || a[i - 1] == '{' || a[i - 1] == '}')
+
+		{
+			if (a[i] >= 'a' && a[i] <= 'z')
+				a[i] -= 32;
+		}
+		i++;
 	}
-	return (s);
+	return (a);
 }
