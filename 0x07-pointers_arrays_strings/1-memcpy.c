@@ -6,7 +6,7 @@
  * @src: Pointer to the object to copy from
  * @n: Number of bytes to copy
  *
- * Description: Copies count characters from the object 
+ * Description: Copies count characters from the object
  * pointed to by src to the object pointed to by dest
  * Return: Pointer to dest
  */
