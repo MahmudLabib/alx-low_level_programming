@@ -1,11 +1,9 @@
 #include "main.h"
 
 /**
- * rot13 - Encodes a string using rot13
- *
- * @s: Pointer to first character in char array
- *
- * Return: Pointer to character
+ * rot13 -  Function that encodes a string using rot13.
+ * @s: Pointer to encode string using rot13
+ * Return: An encode string address
  */
 char *rot13(char *s)
 {
@@ -17,7 +15,7 @@ char *rot13(char *s)
 				(s[i] >= 'A' && s[i] <= 'Z'))
 		{
 			if ((s[i] >= 'a' && s[i] <= 'm') ||
-				(s[i] >= 'A' && s[i] <= 'M'))
+					(s[i] >= 'A' && s[i] <= 'M'))
 				s[i] += 13;
 			else
 				s[i] -= 13;
