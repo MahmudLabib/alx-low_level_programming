@@ -2,6 +2,7 @@
 
 /**
  * rot13 - Encodes a string using rot13
+ *
  * @s: Pointer to first character in char array
  *
  * Return: Pointer to character
