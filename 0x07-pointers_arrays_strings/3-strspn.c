@@ -2,23 +2,23 @@
 
 /**
  * _strspn - gets the length of a prefix substring
- * @s: Pointer to first string memory location
- * @s: Pointer to second string memory location
+ * @s: Pointer to the string to search in
+ * @accept: Pointer to the string containing the accepted characters
  *
- * Return: int value
+ * Return: unsigned int value
  */
 unsigned int _strspn(char *s, char *accept)
 {
-	int i, j;
-	int counter = 0;
+    int i, j;
+    int counter = 0;
 
-	for (i = 0; accept[i] != '\0'; i++)
-	{
-		for (j = 0; s[j] != '\0'; j++)
-		{
-			if (accept[i] == s[j])
-				counter++;
-		}
-	}
-	return (counter);
+    for (i = 0; s[i] != '\0'; i++)
+    {
+        for (j = 0; accept[j] != '\0'; j++)
+        {
+            if (s[i] == accept[j])
+                counter++;
+        }
+    }
+    return (counter);
 }
