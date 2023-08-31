@@ -3,7 +3,7 @@ int is_div(int n, int div);
 
 /**
  * is_prime_number - checks if a number is prime.
- * @n: input 
+ * @n: input
  * Return: 1 or 0
  */
 int is_prime_number(int n)
@@ -12,13 +12,10 @@ int is_prime_number(int n)
 
 	if (n <= 1)
 		return (0);
-
 	if (n <= 3)
 		return (1);
-
 	return (is_div(n, div));
 }
-
 /**
  * is_divisible - check if num is divisible
  * @num: the number to be checked
