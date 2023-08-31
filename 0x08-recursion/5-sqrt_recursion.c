@@ -1,32 +1,31 @@
 #include "main.h"
-int _sqrt(int prev, int root);
+
+int perfect_sqrt(int i, int n);
 
 /**
- * _sqrt_recursion - It returns the value of square rof n.
- * @n: an input
+ * _sqrt_recursion - It returns the natural square root of number
+ * @n: number to get it's square root
  *
- * Return: The square r
+ * Return: square root of n
  */
 int _sqrt_recursion(int n)
 {
 	if (n < 0)
 		return (-1);
-
-	return (_sqrt(1, n));
+	return (perfect_sqrt(1, n));
 }
 
 /**
- * _sqrt - find squr root
- * @prev: previous value
- * @root: square root value
- *
- * Return: the square root
+ * perfect_sqrt - gets the square root of n
+ * @n: number to get its sqrt
+ * @i: is it root
+ * Return: -1 if i greater than n, i if it's the sqrt of n
  */
-int _sqrt(int prev, int root)
+int perfect_sqrt(int i, int n)
 {
-	if (prev > root)
+	if (i > n)
 		return (-1);
-	else if (prev * prev == root)
-		return (prev);
-	return (_sqrt(prev + 1, root));
+	else if (i * i == n)
+		return (i);
+	return (perfect_sqrt(i + 1, n));
 }
