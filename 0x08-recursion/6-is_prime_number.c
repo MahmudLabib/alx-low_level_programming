@@ -16,6 +16,7 @@ int is_prime_number(int n)
 		return (1);
 	return (is_div(n, div));
 }
+
 /**
  * is_divisible - check if num is divisible
  * @num: the number to be checked
