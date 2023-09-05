@@ -28,8 +28,7 @@ int main(int argc, char *argv[])
 			return (1);
 		}
 	}
-	if (result != 0)
-		printf("%d\n", result);
+	printf("%d\n", result);
 	return (0);
 }
 	
