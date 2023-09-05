@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * prints the minimum number of coins
+ * main - prints the minimum number of coins
  * @argc: No. of arguments passed to main
  * @argv: Valus of arguments
  *
@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 {
 	int i, n;
 	int counter = 0;
-	int _coin[]= {25, 10, 5, 2, 1};
+	int _coin[] = {25, 10, 5, 2, 1};
 
 	if (argc != 2)
 	{
@@ -20,21 +20,17 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 	n = atoi(argv[1]);
-	
 	if (n < 0)
 	{
-		printf("0");
-		return (1);
+		printf("0\n");
+		return (0);
 	}
-	else
+	for (i = 0; i < 5 && n >= 0; i++)
 	{
-		for (i = 0; i < 5 && n >= 0; i++)
+		while (n >= _coin[i])
 		{
-			while (n >= _coin[i])
-			{
-				n -= _coin[i];
+			n -= _coin[i];
 				counter++;
-			}
 		}
 	}
 	printf("%d\n", counter);
