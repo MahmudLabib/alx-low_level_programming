@@ -12,14 +12,14 @@
 int main(int argc, char *argv[])
 {
 	int result = 0;
-	int i;
+	int i, j;
 
 	for (i = argc - 1; i > 0; i--)
 	{
 		char *arg = argv[i];
 		int valid = 1;
 
-		for (int j = 0; arg[j] != '\0'; j++)
+		for (j = 0; arg[j] != '\0'; j++)
 		{
 			if (!isdigit((unsigned char)arg[j]))
 			{
