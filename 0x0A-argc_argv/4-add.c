@@ -1,13 +1,14 @@
 #include "main.h"
 #include <ctype.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
  * main - Adds positive numbers
  * @argc: No. of arguments
  * @argv: Array of strings
  *
- * Return: Alway 0 (Success)
+ * Return: 0 if successful, 1 if an error occurs
  */
 int main(int argc, char *argv[])
 {
@@ -16,11 +17,31 @@ int main(int argc, char *argv[])
 
 	for (i = argc - 1; i > 0; i--)
 	{
-		int n = atoi(argv[i]);
+		char *arg = argv[i];
+		int valid = 1;
 
-		if (n > 0)
+		for (int j = 0; arg[j] != '\0'; j++)
 		{
-			result += n;
+			if (!isdigit((unsigned char)arg[j]))
+			{
+				valid = 0;
+				break;
+			}
+		}
+
+		if (valid)
+		{
+			int n = atoi(arg);
+
+			if (n > 0)
+			{
+				result += n;
+			}
+			else
+			{
+				printf("Error\n");
+				return (1);
+			}
 		}
 		else
 		{
@@ -28,7 +49,8 @@ int main(int argc, char *argv[])
 			return (1);
 		}
 	}
+
 	printf("%d\n", result);
 	return (0);
 }
-	
+
