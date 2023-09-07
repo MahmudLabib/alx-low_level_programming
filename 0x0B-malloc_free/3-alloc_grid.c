@@ -23,8 +23,9 @@ int **alloc_grid(int width, int height)
 		pp2int[i] = calloc(width, sizeof(int));
 		if (pp2int[i] == NULL)
 		{
-			for (; i >= 0; i--)
-				free(pp2int[i]);
+			int j;
+			for (j = 0; j < i; j++)
+				free(pp2int[j]);
 			free(pp2int);
 			return (NULL);
 		}
