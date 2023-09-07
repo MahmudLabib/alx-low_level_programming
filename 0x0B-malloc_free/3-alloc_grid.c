@@ -12,7 +12,7 @@
 int **alloc_grid(int width, int height)
 {
 	int i, j;
-	int **pp2int = calloc(height, sizeof(int *));
+	int **pp2int = (int **)malloc(sizeof(int *) * height);
 
 	if (width <= 0 || height <= 0)
 		return (NULL);
@@ -20,7 +20,7 @@ int **alloc_grid(int width, int height)
 		return (NULL);
 	for (i = 0; i < height; i++)
 	{
-		pp2int[i] = (int *)calloc(width, sizeof(int));
+		pp2int[i] = (int *)malloc(sizeof(int) * width);
 		if (pp2int[i] == NULL)
 		{
 			for (j = 0; j < i; j++)
@@ -30,5 +30,9 @@ int **alloc_grid(int width, int height)
 		}
 
 	}
+	for (i = 0; i < height; i++)
+	{
+		for(j = 0; j < width; j++)
+			pp2int[i][j] = 0;
 	return (pp2int);
 }
