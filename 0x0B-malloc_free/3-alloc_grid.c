@@ -20,7 +20,7 @@ int **alloc_grid(int width, int height)
 		return (NULL);
 	for (i = 0; i < height; i++)
 	{
-		pp2int[i] = calloc(width, sizeof(int));
+		pp2int[i] = (int *)calloc(width, sizeof(int));
 		if (pp2int[i] == NULL)
 		{
 			int j;
