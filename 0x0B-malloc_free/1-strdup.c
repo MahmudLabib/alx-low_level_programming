@@ -11,7 +11,8 @@
 int string_size(char *p)
 {
 	int i, counter = 0;
-
+	if (p == NULL)
+		return ('\0');
 	for (i = 0; p[i] != '\0'; i++)
 		counter++;
 	return (counter);
