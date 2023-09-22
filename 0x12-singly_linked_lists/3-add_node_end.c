@@ -3,9 +3,9 @@
 #include <stdlib.h>
 
 /**
- * add_node - adds new node at the end of a list_t list
- * head: Pointer to a pointer that points to node of a list
- * str: Pointer to string literal
+ * add_node_end - adds new node at the end of a list_t list
+ * @head: Pointer to a pointer that points to node of a list
+ * @str: Pointer to string literal
  * Return: address of the pointer to the new node
  */
 list_t *add_node_end(list_t **head, const char *str)
