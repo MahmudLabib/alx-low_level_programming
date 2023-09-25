@@ -8,12 +8,11 @@
 */
 size_t print_listint(const listint_t *h)
 {
-	// i want to print every elements (value) of the listint_t
 	listint_t *pn = NULL;
-	pn = h;
 	int counter = 0;
 
-	while(pn)
+	pn = h;
+	while (pn)
 	{
 		_putchar(pn->n);
 		counter++;
