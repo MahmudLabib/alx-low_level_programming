@@ -1,4 +1,5 @@
 #include "lists.h"
+#define h head
 
 /**
  * add_nodeint - adds a new node at the beggining of a listin_t list
