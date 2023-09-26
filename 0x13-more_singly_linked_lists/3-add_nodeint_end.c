@@ -4,6 +4,7 @@
  * add_nodeint_end - add a new node at the end of a listint_t list
  * @head: Pointer points to a pointer to listint_t list (node). --ppn
  * @n: int value
+ * Return: address of the new node
  */
 listint_t *add_nodeint_end(listint_t **head, const int n)
 {
@@ -19,7 +20,7 @@ listint_t *add_nodeint_end(listint_t **head, const int n)
 		*head = pn;
 		return (pn);
 	}
-	while (!current)
+	while (current->next)
 	{
 		current = current->next;
 	}
