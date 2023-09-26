@@ -1,8 +1,3 @@
-/*
-Write a function that frees a listint_t list.
-
-Prototype: void free_listint(listint_t *head);
-*/
 #include "lists.h"
 
 /**
@@ -20,4 +15,6 @@ void free_listint(listint_t *head)
 		head->next = NULL;
 		head = old_node;
 	}
+	free(old_node);
+	free(head);
 }
