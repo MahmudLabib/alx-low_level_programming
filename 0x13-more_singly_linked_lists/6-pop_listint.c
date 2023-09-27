@@ -11,7 +11,7 @@ int pop_listint(listint_t **head)
 	int val = 0;
 
 	if (!head)
-		return;
+		return (0);
 	if (*head)
 	{
 		old_node = *head;
