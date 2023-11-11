@@ -1,48 +1,70 @@
-#include <stdlib.h>
-#include <stdio.h>
 #include "lists.h"
 
 /**
- * insert_dnodeint_at_index - Inserts a new node at a given position in a doubly linked list.
- * @h: Pointer to the head of the doubly linked list.
- * @idx: Index at which the new node should be inserted.
- * @n: Data for the new node.
- *
- * Return: Address of the new node, or NULL if it failed.
+ * dlistint_len - prints no. of nodes in list
+ * @h: Head of the list
+ * Return: No. of nodes
+ */
+size_t dlistint_len(const dlistint_t *h)
+{
+	int count = 0;
+
+	if (!h)
+		return (count);
+
+	if (h->prev)
+		h = h->prev;
+	while (h)
+	{
+		h = h->next;
+		count++;
+	}
+	return (count);
+}
+/**
+ * insert_dnodeint_at_index - insert node at any index of the dlist
+ * @h: Head of the list
+ * @idx: index to insert the node in
+ * @n: int value
+ * Return: address of the inserted node
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_t *new_node, *temp;
-	unsigned int count = 0;
+	unsigned int index = 0;
+	dlistint_t *newNode,*prev_node;
+	unsigned int len = dlistint_len(*h);
 
-	if (h == NULL)
+	if (!h)
 		return (NULL);
 
 	if (idx == 0)
 		return (add_dnodeint(h, n));
+	else if (idx == len)
+		return (add_dnodeint_end(h, n));
 
-	temp = *h;
-	while (temp != NULL && count < idx - 1)
+	prev_node = *h;
+
+	while (prev_node && index < idx)
 	{
-		temp = temp->next;
-		count++;
+		prev_node = prev_node->next;
+		index++;
 	}
 
-	if (temp == NULL || count < idx - 1)
+	if (prev_node == NULL || index < idx - 1)
 		return (NULL);
 
-	new_node = malloc(sizeof(dlistint_t));
-	if (new_node == NULL)
+	newNode = malloc(sizeof(dlistint_t));
+	if (!newNode)
 		return (NULL);
+	newNode->n = n;
+	newNode->prev = prev_node;
+	newNode->next = prev_node->next;
 
-	new_node->n = n;
-	new_node->prev = temp;
-	new_node->next = temp->next;
+	if (prev_node->next)
+	{
+		prev_node->prev = newNode;
+	}
+	prev_node->next = newNode;
 
-	if (temp->next != NULL)
-		temp->next->prev = new_node;
-
-	temp->next = new_node;
-
-	return (new_node);
+	return (newNode);
 }
